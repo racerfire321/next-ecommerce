@@ -1,5 +1,7 @@
 
 import Link from 'next/link'
+import Filter from '../layout/Filter';
+
 
 async function getData() {
  
@@ -38,6 +40,7 @@ const ListProducts = async() => {
                 <main className="md:w-2/3 lg:w-3/4 px-3">
                   <article className="border border-gray-200 overflow-hidden bg-white shadow-sm rounded mb-5">
                     <div className="flex flex-col md:flex-row">
+                      <Filter/>
                       <div className="md:w-1/4 flex p-3">
                         <div
                           style={{
