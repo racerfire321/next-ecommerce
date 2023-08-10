@@ -144,7 +144,7 @@ const Filter = ()  => {
                     starDimension="20px"
                     starSpacing="2px"
                     name="rating"
-                  />
+                  />{" "}
                 </span>
               </label>
             ))}
