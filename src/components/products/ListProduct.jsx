@@ -1,44 +1,26 @@
+"use client";
 
-import Link from 'next/link'
-import Filter from '../layout/Filter';
+import React from "react";
 import ProductItem from './ProductItem';
+import Filter from '../layout/Filter';
 
-async function getData() {
- 
-  try {
-    const res = await fetch('http://localhost:3000/api/products', { cache: 'no-store' });
 
-    if (!res.ok) {
-      console.error('Failed to fetch data');
-      return;
-    }
-
-  return await res.json();
-  
-  } catch (error) {
-    console.error('Error fetching data:', error);
-  }
-}
-
-const ListProducts = async() => {
-  
-
-   const {products} = await getData()
-  
+   const ListProducts = ({ data }) => {
+    console.log(data);
     
     return (
       
         <>
-         
-
           
           <section className="py-12">
             <div className="container max-w-screen-xl mx-auto px-4">
               <div className="flex flex-col md:flex-row -mx-4">
+              <Filter/>
              <main className="md:w-2/3 lg:w-3/4 px-3">
-              {products && products.map((products)=>(
+             
+             {data?.products?.map((product) => (
                 
-                  <ProductItem key={products?._id} product={products} />
+                  <ProductItem key={product?._id} product={product} />
             ))}
                 </main>
               </div>

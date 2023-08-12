@@ -15,3 +15,4 @@ export const POST = async (request) => {
   await Product.create(data);
   return NextResponse.json({ message: 'Product Created' }, { status: 201 });
 };
+

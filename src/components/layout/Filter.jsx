@@ -138,9 +138,9 @@ const Filter = ()  => {
                 <span className="ml-2 text-gray-500">
                   {" "}
                   <StarRatings
-                    rating={5}
+                    rating={rating}
                     starRatedColor="#ffb829"
-                    numberOfStars={5}
+                    numberOfStars={rating}
                     starDimension="20px"
                     starSpacing="2px"
                     name="rating"

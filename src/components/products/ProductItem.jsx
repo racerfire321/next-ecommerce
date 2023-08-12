@@ -1,13 +1,14 @@
 import React from "react";
 import Link from "next/link";
-import Filter from '../layout/Filter';
+import StarRatings from 'react-star-ratings';
 import Image from "next/image";
 
 const ProductItem = ({ product }) => {
+  
   return (
     <article className="border border-gray-200 overflow-hidden bg-white shadow-sm rounded mb-5">
       <div className="flex flex-col md:flex-row">
-        <Filter />
+       
         <div className="md:w-1/4 flex p-3">
           <div
             style={{
@@ -20,7 +21,7 @@ const ProductItem = ({ product }) => {
   src={
     product?.images && product?.images[0]
       ? product?.images[0].url
-      : "/images/default_product.png"
+      : "/default_product.png"
   }
   alt={product ? product.name : "Product name"}
   height={240}
@@ -43,8 +44,18 @@ const ProductItem = ({ product }) => {
                 
                 </div>
               </div>
+              <StarRatings
+                    rating={product&&product.ratings}
+                    starRatedColor="#ffb829"
+                    numberOfStars={5}
+                    starDimension="20px"
+                    starSpacing="2px"
+                    name="rating"
+                  />
               <b className="text-gray-300">•</b>
-              <span className="ml-1 text-yellow-500">{product?.ratings}</span>
+              <span className="ml-1 text-yellow-500">
+                
+                {product?.ratings}</span>
             </div>
             <p className="text-gray-500 mb-2">
               {product?.description}...
