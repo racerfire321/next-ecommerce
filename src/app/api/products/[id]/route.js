@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import connect from "@/utils/db";
+import connect from "@/backend/config/db";
 import Product from '@/backend/models/Product';
 
  

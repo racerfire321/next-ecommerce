@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import connect from '@/utils/db';
+import connect from '@/backend/config/db';
 import Product from '@/backend/models/Product';
 
 export const GET = async () => {
@@ -15,4 +15,3 @@ export const POST = async (request) => {
   await Product.create(data);
   return NextResponse.json({ message: 'Product Created' }, { status: 201 });
 };
-

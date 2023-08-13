@@ -9,10 +9,10 @@ const BreadCrumbs = ({ breadCrumbs }) => {
           {breadCrumbs?.map((breadCrumb, index) => (
             <li className="inline-flex items-center">
               <Link
-                href={breadCrumb.url}
+                href={breadCrumb.url} 
                 className="text-gray-600 hover:text-blue-600"
               >
-                {breadCrumb.name}
+                {breadCrumb.name}{">"}
               </Link>
               {breadCrumbs?.length - 1 !== index && (
                 <i className="ml-3 text-gray-400 fa fa-chevron-right"></i>
