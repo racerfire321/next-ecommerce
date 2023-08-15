@@ -1,6 +1,5 @@
 import React from "react";
 import {FaAngleRight} from "react-icons/fa";
-i
 import Link from "next/link";
 
 const BreadCrumbs = ({ breadCrumbs }) => {
