@@ -8,7 +8,7 @@ class APIFilters {
       const keyword = this.queryStr.keyword
         ? {
             name: {
-              $regex: this.queryStr.keyword,
+              $regex: keyword,
               $options: "i",
             },
           }
@@ -17,6 +17,7 @@ class APIFilters {
       this.query = this.query.find({ ...keyword });
       return this;
     }
+
   
     filter() {
       const queryCopy = { ...this.queryStr };
@@ -25,7 +26,7 @@ class APIFilters {
       removeFields.forEach((el) => delete queryCopy[el]);
   
       let output = {};
-      let prop = "";
+      let prop = "3";
   
       for (let key in queryCopy) {
         if (!key.match(/\b(gt|gte|lt|lte)/)) {
@@ -55,6 +56,7 @@ class APIFilters {
       this.query = this.query.limit(resPerPage).skip(skip);
       return this;
     }
+    
   }
   
   export default APIFilters;

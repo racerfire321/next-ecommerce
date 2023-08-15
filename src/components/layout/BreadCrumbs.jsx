@@ -1,4 +1,6 @@
 import React from "react";
+import {FaAngleRight} from "react-icons/fa";
+i
 import Link from "next/link";
 
 const BreadCrumbs = ({ breadCrumbs }) => {
@@ -12,10 +14,10 @@ const BreadCrumbs = ({ breadCrumbs }) => {
                 href={breadCrumb.url} 
                 className="text-gray-600 hover:text-blue-600"
               >
-                {breadCrumb.name}{">"}
+              {breadCrumb.name}{<FaAngleRight className='inline-flex'/>} 
               </Link>
               {breadCrumbs?.length - 1 !== index && (
-                <i className="ml-3 text-gray-400 fa fa-chevron-right"></i>
+                <i className="ml-1 text-gray-400 fa fa-chevron-right"></i>
               )}
             </li>
           ))}
